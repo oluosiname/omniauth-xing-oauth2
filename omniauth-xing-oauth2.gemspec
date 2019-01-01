@@ -1,17 +1,17 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "omniauth/xing/oauth2/version"
+require "omniauth/xing_oauth2/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "omniauth-xing-oauth2"
-  spec.version       = Omniauth::Xing::Oauth2::VERSION
+  spec.version       = OmniAuth::XingOauth2::VERSION
   spec.authors       = ["Olumuyiwa"]
   spec.email         = ["oluosiname@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Oauth2 strategy for xing.}
+  spec.description   = %q{Oauth2 strategy for xing.}
+  spec.homepage      = "https://github.com/oluosiname/omniauth-xing-oauth2"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -33,4 +33,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency 'simplecov'
+
+  spec.add_runtime_dependency 'omniauth-oauth2'
 end
