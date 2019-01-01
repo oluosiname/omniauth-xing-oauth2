@@ -1,16 +1,11 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/8177e6f1110700d430fa/maintainability)](https://codeclimate.com/github/oluosiname/omniauth-xing-oauth2/maintainability)
-
 [![Test Coverage](https://api.codeclimate.com/v1/badges/8177e6f1110700d430fa/test_coverage)](https://codeclimate.com/github/oluosiname/omniauth-xing-oauth2/test_coverage)
 
 # Omniauth::Xing::Oauth2
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/omniauth/xing/oauth2`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A Xing OAuth2 strategy for OmniAuth.
 
 ## Installation
-
-Add this line to your application's Gemfile:
 
 ```ruby
 gem 'omniauth-xing-oauth2'
@@ -26,7 +21,49 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :xing, "consumer_key", "consumer_secret"
+end
+
+
+## Auth Hash
+Here's an example Auth Hash available in request.env['omniauth.auth']:
+
+{
+  provider: 'facebook',
+  uid: '1234567',
+  info: {
+    email: 'joe@bloggs.com',
+    name: 'Joe Bloggs',
+    first_name: 'Joe',
+    last_name: 'Bloggs',
+    image: 'http://graph.facebook.com/1234567/picture?type=square',
+    verified: true
+  },
+  credentials: {
+    token: 'ABCDEF...', # OAuth 2.0 access_token, which you may wish to store
+    expires_at: 1321747205, # when the access token expires (it always will)
+    expires: true # this will always be true
+  },
+  extra: {
+    raw_info: {
+      id: '1234567',
+      name: 'Joe Bloggs',
+      first_name: 'Joe',
+      last_name: 'Bloggs',
+      link: 'http://www.facebook.com/jbloggs',
+      username: 'jbloggs',
+      location: { id: '123456789', name: 'Palo Alto, California' },
+      gender: 'male',
+      email: 'joe@bloggs.com',
+      timezone: -8,
+      locale: 'en_US',
+      verified: true,
+      updated_time: '2011-11-11T06:21:03+0000',
+      # ...
+    }
+  }
+}
 
 ## Development
 
@@ -36,7 +73,13 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/omniauth-xing-oauth2.
+Bug reports and pull requests are welcome on GitHub at https://github.com/oluosiname/omniauth-xing-oauth2.
+
+Fork it
+Create your feature branch (git checkout -b my-new-feature)
+Commit your changes (git commit -am 'Add some feature')
+Push to the branch (git push origin my-new-feature)
+Create new Pull Request
 
 ## License
 
