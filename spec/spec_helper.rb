@@ -1,5 +1,8 @@
 require "bundler/setup"
-require "omniauth/xing/oauth2"
+require "omniauth/strategies/xing_oauth2"
+require "omniauth/xing_oauth2"
+require 'simplecov'
+SimpleCov.start
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

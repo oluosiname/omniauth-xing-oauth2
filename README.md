@@ -1,3 +1,7 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/8177e6f1110700d430fa/maintainability)](https://codeclimate.com/github/oluosiname/omniauth-xing-oauth2/maintainability)
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/8177e6f1110700d430fa/test_coverage)](https://codeclimate.com/github/oluosiname/omniauth-xing-oauth2/test_coverage)
+
 # Omniauth::Xing::Oauth2
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/omniauth/xing/oauth2`. To experiment with that code, run `bin/console` for an interactive prompt.
